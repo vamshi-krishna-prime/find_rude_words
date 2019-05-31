@@ -8,15 +8,15 @@ rude_words_list = ["idiot",
                    "jerk",
                    "darn"]
 
-with open("greeting.py") as my_file:
+with open("rude_passage.py") as my_file:
     contents = my_file.read()
+    words = contents.split(" ")
     rude_words_count = 0
-
-    for rude_word in rude_words_list:
-        if rude_word in contents:
+    for word in words:
+        if word in rude_words_list:
             rude_words_count += 1
-            print(f"Rude word found: {rude_words_count} {rude_word}\n")
+            print(f"Rude word found: {rude_words_count}. {word}\n")
 
-if rude_words_list == 0:
+if rude_words_count == 0:
     print("Congratulations there are no rude words found")
     print("Atleast none I know of")
